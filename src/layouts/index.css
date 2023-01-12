@@ -1,0 +1,15 @@
+.ant-layout {
+  height: 100%;
+}
+
+.logo {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trigger {
+  display: flex;
+  font-size: 16px;
+}
