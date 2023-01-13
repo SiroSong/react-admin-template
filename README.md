@@ -1,5 +1,7 @@
 # react-admin-template
 
+### 简介
+
 react-admin-template 是一个简单、纯净、轻量化的 react 管理后台模版，旨在能够快速简洁的创建基于 react 实现的管理应用。
 
 > | 依赖              | 版本    |
@@ -12,12 +14,12 @@ react-admin-template 是一个简单、纯净、轻量化的 react 管理后台�
 > | vite              | ^4.0.0  |
 > | typescript        | ^4.9.3  |
 
-## 功能
+### 功能
 
 - 路由权限
-- 主题控制
+- 暗黑主题
 
-## 目录
+### 项目结构
 
     react-admin-template
       |-- node_modules
@@ -39,7 +41,7 @@ react-admin-template 是一个简单、纯净、轻量化的 react 管理后台�
       | |-- index.css
       | |-- index.tsx
       | |-- main.tsx
-      |  `-- vite-env.d.ts
+      | `-- vite-env.d.ts
       |-- .gitignore
       |-- .prettierrc.json
       |-- index.html
@@ -49,5 +51,7 @@ react-admin-template 是一个简单、纯净、轻量化的 react 管理后台�
       |-- tsconfig.json
       |-- tsconfig.node.json
       `-- vite.config.ts
+
+### 文档
 
 未完待续。。。
