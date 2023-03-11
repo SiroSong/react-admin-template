@@ -1,6 +1,6 @@
 import { theme } from "antd"
 import { ReactNode, CSSProperties, useContext } from "react"
-import { ThemeContext } from "../providers/theme"
+import { ThemeContext } from "../modules/theme"
 
 export default function View({
   children,

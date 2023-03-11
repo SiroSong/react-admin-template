@@ -4,10 +4,11 @@ import {
   RouteObject,
   RouterProvider,
 } from "react-router-dom"
-import { UserContext } from "../providers/user"
+import { UserContext } from "../modules/user"
 import { RouterType } from "../types"
 import { loginRoute } from "./login"
 import { mainRoute } from "./main"
+import Permission from "./permission"
 
 export function AppRouter() {
   const userInfo = useContext(UserContext)
@@ -31,10 +32,12 @@ export function AppRouter() {
     return _routes
   }
 
-  const appRoutes = useMemo(() => {
-    const allRoutes = [loginRoute, mainRoute]
-    return createBrowserRouter(formatRoute(allRoutes))
-  }, [userInfo.user])
+  const appRoutes =  createBrowserRouter([{
+    path: '',
+    element: <Permission />,
+    children: [mainRoute, loginRoute]
+  }])
+
 
   return <RouterProvider router={appRoutes} />
 }

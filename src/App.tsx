@@ -1,8 +1,8 @@
 import { redirect } from "react-router-dom"
 import { AppRouter } from "./routes"
 import "./App.css"
-import { UserProvider } from "./providers/user"
-import { ThemeProvider } from "./providers/theme"
+import { UserProvider } from "./modules/user"
+import { ThemeProvider } from "./modules/theme"
 import { useEffect } from "react"
 
 function App() {

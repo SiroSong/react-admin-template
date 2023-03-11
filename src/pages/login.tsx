@@ -2,7 +2,7 @@ import { UserOutlined, LockOutlined } from "@ant-design/icons"
 import { Button, Card, Form, Input, theme } from "antd"
 import { useContext } from "react"
 import { useNavigate } from "react-router-dom"
-import { defaultUser, UserContext } from "../providers/user"
+import { defaultUser, UserContext } from "../modules/user"
 import styles from "./login.module.css"
 
 export default function Login() {
