@@ -9,7 +9,13 @@ import {
   theme,
   Typography,
 } from "antd"
-import { Fragment, useContext, useEffect, useMemo, useState } from "react"
+import React, {
+  Fragment,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react"
 import Icon, {
   GithubOutlined,
   LoginOutlined,
@@ -18,7 +24,6 @@ import Icon, {
   SettingOutlined,
   UserOutlined,
 } from "@ant-design/icons"
-import React from "react"
 import { mainRoute } from "../routes/main"
 import "./index.css"
 import { RouterType, Theme } from "../types"
@@ -29,15 +34,17 @@ import { ThemeContext } from "../providers/theme"
 import IconSun from "../components/IconSun"
 import IconMoon from "../components/IconMoon"
 
+type MenuItem = Required<MenuProps>["items"][number]
+
 const { Header, Sider, Content } = AntdLayout
 
-const formatMenu: any = (menuRoutes: RouterType[] | undefined) => {
-  const userInfo = useContext(UserContext)
-  const menus = []
-
+const formatMenu = (menuRoutes: RouterType[] | undefined) => {
   if (!menuRoutes) {
-    return null
+    return
   }
+
+  const userInfo = useContext(UserContext)
+  const menus: MenuItem[] = []
 
   for (const route of menuRoutes) {
     const menu = {
@@ -45,7 +52,7 @@ const formatMenu: any = (menuRoutes: RouterType[] | undefined) => {
       key: route.path,
       icon: route.icon,
       children: formatMenu(route.children),
-    }
+    } as MenuItem
 
     if (
       route.hide !== true &&
@@ -90,7 +97,7 @@ export default function Layout() {
     }, "/")
   }
 
-  const items: MenuProps["items"] = [
+  const items: MenuItem[] = [
     {
       key: "2",
       label: <a>设置</a>,
